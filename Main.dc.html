@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<title>Monitron – monitoring i kamery</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800;900&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Archivo',system-ui,sans-serif;background:#141618}
+a{color:#c8f031;text-decoration:none}a:hover{color:#e3ff7a}
+</style>
+</helmet>
+<div style="background:#141618;color:#f2f4f0;overflow:hidden;position:relative">
+<div style="position:absolute;top:70px;left:0;right:0;text-align:center;font-size:clamp(120px,24vw,340px);font-weight:900;letter-spacing:-0.04em;line-height:1;color:#ffffff;opacity:0.04;white-space:nowrap">MONITRON</div>
+<div style="position:relative;max-width:1200px;margin:0 auto;padding:0 32px">
+<div style="display:flex;justify-content:space-between;align-items:center;padding:28px 0">
+<div style="display:flex;align-items:center;gap:12px"><div style="display:flex;align-items:center;justify-content:center;gap:12px;padding:0 0 56px"><img src="./assets/faff866802f69785e6aa71c261f31adb.png" alt="Monitron" style="height: 92px; width: 88px; display: block"><div style="font-weight:900;font-size:22px;letter-spacing:0.08em">MONI<span style="color:{{accent}}">TRON</span></div></div></div>
+<div style="display:flex;gap:32px;font-size:13px;letter-spacing:0.12em;text-transform:uppercase">
+<a href="#oferta" style="color:#aab0a6">Oferta</a>
+<a href="#proces" style="color:#aab0a6">Jak działamy</a>
+<a href="#realizacje" style="color:#aab0a6">Realizacje</a>
+<a href="#kontakt" style="color:#aab0a6">Kontakt</a>
+</div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px;align-items:center;min-height:800px">
+<div>
+
+<h1 style="margin:0;font-size:68px;line-height:1;font-weight:900;letter-spacing:-0.03em">Widzisz więcej.<br>Śpisz spokojniej.</h1>
+<p style="margin:28px 0 36px;font-size:18px;line-height:1.6;color:#aab0a6;max-width:460px">Projektujemy i montujemy systemy kamer dla domów, firm i magazynów. Dobieramy sprzęt do Twojego obiektu i montujemy go tak, żeby działał niezawodnie.</p>
+<div style="display:flex;gap:16px">
+<a href="#oferta" style="border:1px solid #3a3f3c;color:#f2f4f0;padding:16px 32px;border-radius:999px;font-size:15px">Zobacz ofertę</a>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:20px">
+<div style="width:300px;height:300px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#3b403d,#1b1e1c 70%);box-shadow:0 40px 80px rgba(0,0,0,0.6),0 0 0 2px #2a2e2b;display:flex;align-items:center;justify-content:center">
+<div style="width:150px;height:150px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#6a7f1c,#0b0d0c 60%);box-shadow:0 0 0 10px #101211,0 0 40px {{accent}}"></div>
+</div>
+
+<div style="display:flex;gap:10px">
+<sc-for list="{{packs}}" as="p" hint-placeholder-count="3">
+<button onClick="{{ p.pick }}" style="min-height:44px;padding:0 20px;border-radius:999px;font-family:inherit;font-weight:700;font-size:14px;cursor:pointer;border:1px solid #3a3f3c;{{p.style}}">{{p.label}}</button>
+</sc-for>
+</div>
+<div style="font-size:15px;color:#aab0a6;text-align:center;max-width:340px;min-height:44px">{{packText}}</div>
+
+</div>
+</div>
+<div id="oferta" style="padding:80px 0 40px">
+<div style="font-size:13px;letter-spacing:0.2em;text-transform:uppercase;color:{{accent}};margin-bottom:16px">Oferta</div>
+<h2 style="margin:0 0 40px;font-size:44px;font-weight:900;letter-spacing:-0.02em">Co robimy</h2>
+<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px">
+<div style="background:#1c1f1d;border:1px solid #2a2e2b;border-radius:20px;padding:32px"><div style="font-size:48px;font-weight:900;color:{{accent}}">01</div><h3 style="margin:12px 0 8px;font-size:22px">Monitoring domowy</h3><p style="margin:0;color:#aab0a6;line-height:1.6">Kamery przy wejściu, garażu i ogrodzie, z podglądem na żywo w telefonie.</p></div>
+<div style="background:#1c1f1d;border:1px solid #2a2e2b;border-radius:20px;padding:32px"><div style="font-size:48px;font-weight:900;color:{{accent}}">02</div><h3 style="margin:12px 0 8px;font-size:22px">Firmy i magazyny</h3><p style="margin:0;color:#aab0a6;line-height:1.6">Rozbudowane systemy z rejestratorem, nagrywaniem 24/7 i archiwum.</p></div>
+<div style="background:#1c1f1d;border:1px solid #2a2e2b;border-radius:20px;padding:32px"><div style="font-size:48px;font-weight:900;color:{{accent}}">03</div><h3 style="margin:12px 0 8px;font-size:22px">Serwis i rozbudowa</h3><p style="margin:0;color:#aab0a6;line-height:1.6">Przeglądy, naprawy i dokładanie kamer do istniejącej instalacji.</p></div>
+</div>
+</div>
+<div id="proces" style="padding:120px 0 80px">
+<div style="font-size:13px;letter-spacing:0.2em;text-transform:uppercase;color:{{accent}};margin-bottom:16px">Jak działamy</div>
+<h2 style="margin:0 0 48px;font-size:44px;font-weight:900;letter-spacing:-0.02em">Cztery kroki do instalacji</h2>
+<div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px">
+<div style="border-top:2px solid #2a2e2b;padding-top:24px"><div style="font-size:14px;letter-spacing:0.2em;color:{{accent}};font-weight:800">KROK 01</div><h3 style="margin:12px 0 8px;font-size:22px">Rozmowa</h3><p style="margin:0;color:#aab0a6;line-height:1.6">Mówisz, co chcesz chronić i jaki masz budżet.</p></div>
+<div style="border-top:2px solid #2a2e2b;padding-top:24px"><div style="font-size:14px;letter-spacing:0.2em;color:{{accent}};font-weight:800">KROK 02</div><h3 style="margin:12px 0 8px;font-size:22px">Wizja lokalna</h3><p style="margin:0;color:#aab0a6;line-height:1.6">Oglądamy obiekt i dobieramy liczbę oraz miejsca kamer.</p></div>
+<div style="border-top:2px solid #2a2e2b;padding-top:24px"><div style="font-size:14px;letter-spacing:0.2em;color:{{accent}};font-weight:800">KROK 03</div><h3 style="margin:12px 0 8px;font-size:22px">Montaż</h3><p style="margin:0;color:#aab0a6;line-height:1.6">Instalujemy kamery i rejestrator, prowadzimy przewody.</p></div>
+<div style="border-top:2px solid #2a2e2b;padding-top:24px"><div style="font-size:14px;letter-spacing:0.2em;color:{{accent}};font-weight:800">KROK 04</div><h3 style="margin:12px 0 8px;font-size:22px">Odbiór</h3><p style="margin:0;color:#aab0a6;line-height:1.6">Pokazujemy, jak obsługiwać system, i przekazujemy dostęp.</p></div>
+</div>
+</div>
+<div id="realizacje" style="padding:80px 0 120px">
+<div style="font-size:13px;letter-spacing:0.2em;text-transform:uppercase;color:{{accent}};margin-bottom:16px">Realizacje</div>
+<h2 style="margin:0 0 48px;font-size:44px;font-weight:900;letter-spacing:-0.02em">Tak wyglądają nasze instalacje</h2>
+<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px">
+<div style="height:300px;border-radius:20px;background:linear-gradient(160deg,#2a2e2b,#1b1e1c);border:1px solid #2a2e2b;display:flex;align-items:flex-end;padding:24px;box-sizing:border-box"><div><div style="font-size:12px;letter-spacing:0.2em;color:{{accent}};text-transform:uppercase">Dom</div><div style="margin-top:6px;color:#aab0a6">[ZDJĘCIE REALIZACJI]</div></div></div>
+<div style="height:300px;border-radius:20px;background:linear-gradient(160deg,#2a2e2b,#1b1e1c);border:1px solid #2a2e2b;display:flex;align-items:flex-end;padding:24px;box-sizing:border-box"><div><div style="font-size:12px;letter-spacing:0.2em;color:{{accent}};text-transform:uppercase">Firma</div><div style="margin-top:6px;color:#aab0a6">[ZDJĘCIE REALIZACJI]</div></div></div>
+<div style="height:300px;border-radius:20px;background:linear-gradient(160deg,#2a2e2b,#1b1e1c);border:1px solid #2a2e2b;display:flex;align-items:flex-end;padding:24px;box-sizing:border-box"><div><div style="font-size:12px;letter-spacing:0.2em;color:{{accent}};text-transform:uppercase">Magazyn</div><div style="margin-top:6px;color:#aab0a6">[ZDJĘCIE REALIZACJI]</div></div></div>
+</div>
+</div>
+<div style="padding:40px 0 80px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px">
+<div><div style="font-size:56px;font-weight:900;color:{{accent}}">XYZ</div><div style="color:#aab0a6">zrealizowanych instalacji</div></div>
+<div><div style="font-size: 56px; font-weight: 900; color: {{accent}}; text-align: start">XYZ</div><div style="color:#aab0a6">lat doświadczenia</div></div>
+<div><div style="font-size:56px;font-weight:900;color:{{accent}}">24/7</div><div style="color:#aab0a6">podgląd z telefonu</div></div>
+<div><div style="font-size:56px;font-weight:900;color:{{accent}}">0 zł</div><div style="color:#aab0a6">za wycenę</div></div>
+</div>
+<div id="kontakt" style="background:{{accent}};color:#141618;border-radius:28px;padding:56px;margin-bottom:64px;display:flex;justify-content:space-between;align-items:center;gap:32px">
+<div><h2 style="margin:0 0 8px;font-size:40px;font-weight:900;letter-spacing:-0.02em">Porozmawiajmy o Twoim monitoringu</h2><p style="margin:0;font-size:17px">Zadzwoń lub napisz, a przygotujemy wycenę bez zobowiązań.</p>
+<sc-if value="{{ asked }}" hint-placeholder-val="{{ false }}"><p style="margin:16px 0 0;font-size:17px;font-weight:800">Pytasz o pakiet: {{packLabel}}</p></sc-if></div>
+<div style="font-weight:800;font-size:18px;line-height:1.7;white-space:nowrap">[TELEFON]<br>[E-MAIL]</div>
+</div>
+<div style="font-weight:900;font-size:22px;letter-spacing:0.08em">MONI<span style="color:{{accent}}">TRON</span></div></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#c8f031","options":["#c8f031","#9be564","#e8ff3a"]},"$preview":{"width":1280,"height":2960}}'>
+class Component extends DCLogic {
+  constructor(props){ super(props); this.state = { pack: 1, asked: false }; }
+  renderVals() {
+    const accent = this.props.accent ?? '#c8f031';
+    const texts = ['Na start: wejście i podjazd. Idealne do małego domu lub mieszkania.','Najpopularniejszy: dom z ogrodem, garaż i wejście, z nagrywaniem.','Dla firm i dużych posesji: pełne pokrycie, rejestrator i archiwum.'];
+    const labels = ['2 kamery','4 kamery','8+ kamer'];
+    const packs = labels.map((label, i) => ({
+      label,
+      pick: () => this.setState({ pack: i }),
+      style: this.state.pack === i ? 'background:' + accent + ';color:#141618;border-color:' + accent : 'background:transparent;color:#f2f4f0'
+    }));
+    return { accent, packs, packText: texts[this.state.pack], packLabel: labels[this.state.pack], asked: this.state.asked, ask: () => this.setState({ asked: true }) };
+  }
+}
+</script>
+</body>
+</html>
